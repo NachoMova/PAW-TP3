@@ -3,19 +3,29 @@
 /* Slider */
 #slider {
     position: relative;
-    height: 550px;
-    padding: 10px;
+    max-height: 550px;
     margin: 0px;
     background: #333;
     list-style-type: none;
+    overflow: hidden;
 }
 
-.slide {
+#slider .slider__container {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#slider .slide {
   display: none;
 }
 
-.slide.active {
+#slider .slide.active {
   display: block;
+}
+
+#slider img.img-carrousel {
+    width: 100%;
 }
 
 /* Botones Next & previous */
@@ -81,4 +91,102 @@
 @keyframes fade {
   from {opacity: .4}
   to {opacity: 1}
+}
+
+/* Animacion LEFT */
+.left {
+  position: relative;
+  -webkit-animation-name: left;
+  -webkit-animation-duration: 1.5s;
+  animation-name: left;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes left {
+  from {
+    opacity: 0;
+    left: 100%;
+  }
+
+  to {
+    opacity: 1;
+    left: 0%;
+  }
+}
+
+@keyframes left {
+  from {
+    opacity: 0;
+    left: 100%;
+  }
+
+  to {
+    opacity: 1;
+    left: 0%;
+  }
+}
+
+/* Animacion TOP */
+.top {
+  position: relative;
+  -webkit-animation-name: top;
+  -webkit-animation-duration: 1.5s;
+  animation-name: top;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes top {
+  from {
+    opacity: 0;
+    bottom: : -600px;
+  }
+
+  to {
+    opacity: 1;
+    top: 0%;
+  }
+}
+
+@keyframes top {
+  from {
+    opacity: 0;
+    top: -600px;
+  }
+
+  to {
+    opacity: 1;
+    top: 0;
+  }
+}
+
+/* Animacion ZOOM */
+.zoom {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 1.5s;
+  animation-name: zoom;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes zoom {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes zoom {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
