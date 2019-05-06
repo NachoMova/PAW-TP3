@@ -1,0 +1,32 @@
+{
+	"titulo": "Cuestionario Random",
+	"preguntas":[
+		{
+			"pregunta": "¿Con qué colores se distingue el club River Plate?",
+			"respuestas": ["Rojo", "Azul", "Blanco", "Amarillo"],
+			"correctas": [0, 2]
+		},
+		{
+			"pregunta": "¿Cuándo es el día de la bandera?",
+			"respuestas": ["17 de Agosto", "9 de Julio", "20 de Junio"],
+			"correctas": [2]
+		},
+		{
+			"pregunta": "¿Cuál es el resultado de la siguiente operación: 7x9?",
+			"respuestas": ["63", "72"],
+			"correctas": [0]
+		},
+		{
+			"pregunta": "¿Cuál de estas son marcas reconocidas de alfajores?",
+			"respuestas": ["Samsung", "Aguila", "Gaelle", "Guaymallén"],
+			"correctas": [1, 3]
+		},
+		{
+			"pregunta": "¿Cuántos hijos tienen los Simpsons?",
+			"respuestas": ["1", "3", "5"],
+			"correctas": [1]
+		}
+	],
+	"cantidadAPreguntar": 3,
+	"tiempoDeTrabajo": 60
+}

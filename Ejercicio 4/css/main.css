@@ -1,0 +1,87 @@
+@import url(reset.css);
+
+body{
+  background-color: #E6E6FF;
+  font-size: 1em;
+}
+
+#contenedor{
+  width: 100%;
+  height: 100%;
+}
+
+h1{
+  border: 2px solid black;
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center; 
+  background-color: #B4FFE5;
+}
+
+/* Seccion principal que contiene el cuestionario*/
+.seccionCuestionario{
+  display: grid;
+  grid-gap: 3%;
+  height: 100%;
+  width: 100%;
+}
+
+/* Articulo que contiene las preguntas con sus respuestas*/
+.articuloPregunta{
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  display: grid; 
+  padding: 1%;
+}
+
+/* texto de la pregunta*/
+.pregunta{
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+/* div que contiene las respuestas (checkboks) */
+.contenedorRespuestas{
+  margin: 1%; 
+}
+
+/* Resultado de la pregunta (puntos) */
+.resultadoPregunta{
+  font-style: italic;
+  margin: 1%;
+}
+
+/* Resultado total del cuestionario */
+.resultadoTotal{
+  border: 2px solid red;
+  font-size: 2em;
+  font-weight: bold;
+  margin: 1%;
+  padding: 0.5%;
+}
+
+/* div que contiene el tiempo transcurrido */
+.divTiempo{
+  text-align: right;
+  margin-right: 2%;
+}
+
+/* tiempo transcurrido (solo número) */
+.tiempo{
+  font-weight: bold;
+} 
+
+/* Botón para enviar cuestionario */
+.botonEnviar{
+  background-color: #FF6B52;
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 5%;
+  margin-left: 35%;
+  width: 30%;
+}
+
+/* clase que permite resaltar opcion correcta*/
+.opcionCorrecta{
+  background-color: lime;
+}
