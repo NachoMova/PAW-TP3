@@ -7,3 +7,12 @@ Pueden utilizar el sitio https://www.jssor.com para sacar algunas ideas interesa
 
 ## Guía de ejecución del ejercicio
 La guía de ejecución para este ejercicio la podrá encontrar en el README.md general del proyecto. Los pasos para ejecutar el ejercicio son los mismos para todos los ejercicios del trabajo práctico.
+
+## Slider
+La librería toma las imágenes puesta en el listado (<ul>) y las transforma en un slider del tipo carrousel.
+
+### Tiempo de transición
+Modificar los valores (en ms) del atributo "data-time" ubicada dentro del listado. Ej: data-time="1500", equivale a 1.5 segundos entre slide y slide.
+
+### Efectos
+Se implementaron 3 efectos que se modifican del atributo "data-effect". Los posibles valores son: "fade", "left", "top".
