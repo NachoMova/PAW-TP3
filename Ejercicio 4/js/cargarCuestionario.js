@@ -7,6 +7,7 @@ var window = window || {},
    Test.urlJson = "cuestionario/archivo.json";
    Test.respCorrectas = [];
    Test.tiempo = {};
+   Test.finTest = {};
 
   //Función que arma la seccion que contendrá al cuestionario
   Test.iniciarTest = function(contenedor){
@@ -148,14 +149,15 @@ var window = window || {},
 
   //Función que se ejecuta luego de finalizar el tiempo máximo
   Test.terminarCuestionario = function(tiempo){
-    setTimeout(function () {
-      Test.corregirTest(); //llamo a la función corregir test
+    Test.finTest = setTimeout(function () {
+                      Test.corregirTest(); //llamo a la función corregir test
 
-    },tiempo*1000);
+                   },tiempo*1000);
   }
 
   //Esta función se ejecuta al presionar el botón Enviar
   Test.verificarTest = function(){ 
+    window.clearTimeout(Test.finTest); //Si se presiono el  botón enviar desactivo el timeOut de la  funcion terminarCuestionario() 
     Test.corregirTest(); //llamo a la función corregir test
   }
   
