@@ -1,0 +1,118 @@
+@import url(reset.css);
+
+body{
+  width: 100%;
+  height: 100%;
+  background-color: #E6E6FF;
+  font-size: 1em;
+}
+
+#contenedor{
+  width: 100%;
+  height: 100%;
+}
+
+h1{
+  color: black;
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center; 
+  background-color: #E6E6FF;
+}
+
+.seccionRepro{
+  display: grid;
+  height: 100%;
+  padding: 1%;
+  grid-gap: 1%;
+}
+
+.reproductor{ 
+    width: 100%;
+}
+
+.listaVideos{
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-gap: 2%;
+}
+
+.liVideo{
+  display: grid;
+  background-color: white;
+}
+
+a{
+  text-decoration: none;
+  display: grid;
+}
+
+.textVideo{
+  color: black;
+}
+
+.artVideo{
+  width: 100%;
+  height: 100%;
+  display: grid;
+}
+
+.imagen{
+  width: 100%;
+  height: 100%;
+}
+
+.divImagen{
+  height: 101%;
+}
+
+.duracion{
+  color:white;
+  font-weight: bold; 
+  text-align: right;
+  background-color: black;
+  padding-right: 1%;
+}
+
+.textVideo:hover {
+  color:blue;
+}
+
+
+
+/************** PANTALLAS MENORES A 500px *************/
+@media screen and (max-width:500px) {
+  .divImagen{
+    width: 70vw;
+    height: 50vw;
+  }
+
+  .liVideo {
+    width: 70vw;
+  }
+
+}
+
+/************** PANTALLAS ENTRE 501 y 1024 px *************/
+@media screen and (min-width:501px) and (max-width:1024px) {
+  .divImagen{
+    width: 70vw;
+    height: 50vw;
+  }
+
+   .liVideo {
+    width: 70vw;
+  }
+
+}
+
+/************** PANTALLAS MAYORES A 1024 px *************/
+@media screen and (min-width:1025px) {
+  .seccionRepro{
+    grid-template-columns: 74% 25%;
+  }
+  
+}
+
+
