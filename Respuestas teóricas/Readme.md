@@ -69,4 +69,6 @@ En algunas ocasiones, puede que el uso de variables haga que el proceso de reder
 
 **10)** CSS Grid Layout ¿Qué es? Explicar las reglas que intervienen en el armado de una grilla. ¿Qué ventajas y desventajas tiene frente a otros Layouts?
 
+asdasdasd
+
 **11)** ¿Qué puntos en común y en que se diferencian las Material Design Guide lines de Google y las Human Interface Guidelines de Apple?
