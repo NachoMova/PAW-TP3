@@ -52,7 +52,9 @@ Es una regla de CSS3 que permite aplicar ciertas propiedades a un elemento si se
 
 Las variables css pueden utilizarse cuando en sitios web complejos con una gran cantidad de código css es necesario repetir un valor debido a que el mismo se va a utilizar en diversas partes del documento. Esto es de gran utilidad, ya que en todos los casos en que se tenga que utilizar dicho valor, solo bastará con hacer referencia a la variable css declarada. Entonces, si el valor debiera ser modificado por alguna razon no es necesario realizar el cambio en todos los lugares que este aparezca. Solo alcanza con modificar el valor de la variable css. Un ejemplo de como se utilizan, Definición:
 
-    root { --main-color: black; }
+    root { 
+    	--main-color: black; 
+    }
 
 uso de la variable css:
 
