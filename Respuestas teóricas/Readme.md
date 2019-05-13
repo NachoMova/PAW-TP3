@@ -1,75 +1,72 @@
-**1)** ¿Qué significa que los estilos se apliquen en cascada? ¿cómo aplica la herencia de estilos?
+**1)** Â¿QuÃ© significa que los estilos se apliquen en cascada? Â¿cÃ³mo aplica la herencia de estilos?
 
-Los elementos en los niveles bajos de la jerarquía heredan los estilos asignados a los elementos en los niveles más abajo.
-Los estilos heredados de elementos en niveles superiores se pueden reemplazar por nuevos estilos definidos para los elementos en niveles inferiores de la jerarquía. Algunos estilos no pueden ser heredadas, como padding o margin. Un hijo que hereda una propiedad, puede cambiarla si se le define algo distinto (de lo más general a lo más particular). Es posible forzar la herencia con “inherit”.
+Los elementos en los niveles bajos de la jerarquÃ­a heredan los estilos asignados a los elementos en los niveles mÃ¡s abajo. Los estilos heredados de elementos en niveles superiores se pueden reemplazar por nuevos estilos definidos para los elementos en niveles inferiores de la jerarquÃ­a. Algunos estilos no pueden ser heredadas, como padding o margin. Un hijo que hereda una propiedad, puede cambiarla si se le define algo distinto (de lo mÃ¡s general a lo mÃ¡s particular). Es posible forzar la herencia con â€œinheritâ€.
 
-**2)** ¿Por qué es necesario utilizar un CSS de Reset?
+**2)** Â¿Por quÃ© es necesario utilizar un CSS de Reset?
 
-El CSS de Reset lo que hace es "limpia" todas los estilos que tenga la página, para que puedan ser configurados a gusto del desarrollador. Esto se da por que la mayoría de las veces distintos navegadores muestran los estilos de muy diferente manera y a su vez le aplican ciertos estilos a algunos elementos por razones de compatibilidad.
+El CSS de Reset lo que hace es "limpia" todas los estilos que tenga la pÃ¡gina, para que puedan ser configurados a gusto del desarrollador. Esto se da por que la mayorÃ­a de las veces distintos navegadores muestran los estilos de muy diferente manera y a su vez le aplican ciertos estilos a algunos elementos por razones de compatibilidad.
 
-**3)** ¿Qué es el CSS box model?
+**3)** Â¿QuÃ© es el CSS box model?
 
-EL CSS Box Model, es el “contenedor” de cada elemento HTML. Cada elemento es considerado como un bloque/caja que está formado por: el contenido (el elemento en si), padding, border y margin.
+EL CSS Box Model, es el â€œcontenedorâ€ de cada elemento HTML. Cada elemento es considerado como un bloque/caja que estÃ¡ formado por: el contenido (el elemento en si), padding, border y margin.
 
-**4)** ¿Cuál es el código que hay que insertar en una hoja de estilo para poder usar WebFonts?
+**4)** Â¿CuÃ¡l es el cÃ³digo que hay que insertar en una hoja de estilo para poder usar WebFonts?
 
 A la hora de querer usar una fuente que no se encuentra instalada en el server (o donde se tenga alojada la web), se puede incluir el archivo de las mismas en el CSS.
-El código es:
-@font-face {
-    font-family: miFuente;
-    src: url(mifuente.woff);
-}
+
+El cÃ³digo es:
+
+    @font-face {
+            font-family: miFuente; src: url(mifuente.woff);
+     }
+
 Existen varios formatos de fuente (TTF, OTF, WOFF, WOFF 2.0), pero no todas son compatibles con los navegadores
 
-**5)** ¿Qué son y para qué sirven los pseudoElementos?
+**5)** Â¿QuÃ© son y para quÃ© sirven los pseudoElementos?
 
-Son elementos que permiten modificar una parte específica de un elemento. Los pseudoElementos son:
-    • ::after ? coincide con el último hijo virtual del elemento seleccionado. Se usa generalmente para añadir contenido estético a un elemento, usando la propiedad CSS content
-    • ::before  ? crea un pseudo-elemento que es el primer hijo del elemento seleccionado. Es usado normalmente para añadir contenido estético a un elemento, usando la propiedad content.
-    • ::first-letter ? aplica reglas la primera letra del elemento.
-    • ::first-line ? aplica reglas a la primera línea del elemento.
-    • ::selection ?  aplica reglas a una porción de un documento que ha sido destacado (por ejemplo: selección con el mouse o algún otro puntero en un dispositivo) del usuario.
+Son elementos que permiten modificar una parte especÃ­fica de un elemento. Los pseudoElementos son:
+ - ::after -> coincide con el Ãºltimo hijo virtual del elemento seleccionado. Se usa generalmente para aÃ±adir contenido estÃ©tico a un elemento, usando la propiedad CSS content.
+ - ::before -> crea un pseudo-elemento que es el primer hijo del elemento seleccionado. Es usado normalmente para aÃ±adir contenido estÃ©tico a un elemento, usando la propiedad content.  ::first-letter ? aplica reglas la primera letra del elemento.
+ - ::first-line -> aplica reglas a la primera lÃ­nea del elemento.  
+ - ::selection -> aplica reglas a una porciÃ³n de un documento que ha sido destacado (por ejemplo: selecciÃ³n con el mouse o algÃºn otro puntero en un dispositivo) del usuario.
 
-**6)** ¿Cómo se calcula la prioridad de una regla CSS? Expresarlo como una fórmula matemática.
+**6)** Â¿CÃ³mo se calcula la prioridad de una regla CSS? Expresarlo como una fÃ³rmula matemÃ¡tica.
+Cuando tenemos una serie de reglas aplican sobre un mismo elemento, entra en juego el siguiente orden de prioridad:
 
-**7)** ¿Qué es el view port? ¿Cómo se configura? ¿qué problema soluciona?
+ - **!important**: cuando un estilo es marcado como importante prevalecerÃ¡ sobre los demÃ¡s.
+ - **Origen de las reglas**: SegÃºn el origen de la misma, siguiendo el siguiente orden: Reglas del Autor - Reglas del Lector - Reglas del Navegador.
+ - **Peso de la regla**: una regla con mayor peso prevalecerÃ¡ sobre otra de menor peso, teniendo en cuenta lo siguiente: Peso = ABC. DÃ³nde:
+	 - **A** = nÂº de selectores de ID.
+	 - **B** = nÂº de selectores de CLASE.
+	 - **C** = nÂº de selectores de HTML.
 
-El view port es el área de la página web que es vista por el usuario, es decir que va a ir variando dependiendo del dispositivo.
-Para tenerlo en cuenta y que el navegaor lo sepa manejar hay que agregar el siguiente meta:
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+**7)** Â¿QuÃ© es el view port? Â¿CÃ³mo se configura? Â¿quÃ© problema soluciona?
 
-**8)** ¿Qué son las media querys? Enumere los distintos tipos de medios y las principales características de cada uno de ellos.
+El view port es el Ã¡rea de la pÃ¡gina web que es vista por el usuario, es decir que va a ir variando dependiendo del dispositivo. Para tenerlo en cuenta y que el navegaor lo sepa manejar hay que agregar el siguiente meta:
 
-Es una regla de CSS3 que permite aplicar ciertas propiedades a un elemento si se cumple una determinada condición. Su mayor uso es a la hora de aplicar estilos en caso de que la pantalla tenga una dimensión determinada, usada para hacer una web responsive, modificando tamaño, ubicación o comportamiento del elemento según el ancho de la pantalla por ejemplo ó si es una impresora.
+**8)** Â¿QuÃ© son las media querys? Enumere los distintos tipos de medios y las principales caracterÃ­sticas de cada uno de ellos.
 
+Es una regla de CSS3 que permite aplicar ciertas propiedades a un elemento si se cumple una determinada condiciÃ³n. Su mayor uso es a la hora de aplicar estilos en caso de que la pantalla tenga una dimensiÃ³n determinada, usada para hacer una web responsive, modificando tamaÃ±o, ubicaciÃ³n o comportamiento del elemento segÃºn el ancho de la pantalla por ejemplo Ã³ si es una impresora.
 
-**9)** ¿En qué circunstancias se pueden utilizar las variables css? ¿Qué problemas pueden traer aparejadas? ¿Cuándo consideras que sería bueno utilizarlas?
+**9)** Â¿En quÃ© circunstancias se pueden utilizar las variables css? Â¿QuÃ© problemas pueden traer aparejadas? Â¿CuÃ¡ndo consideras que serÃ­a bueno utilizarlas?
 
-Las variables css pueden utilizarse cuando en sitios web complejos con una gran cantidad de código css es necesario repetir un valor debido a que el mismo se va a utilizar en diversas partes del documento. 
-Esto es de gran utilidad, ya que en todos los casos en que se tenga que utilizar dicho valor, solo bastará con hacer referencia a la variable css declarada. Entonces, si el valor debiera ser modificado por alguna razon no es necesario realizar el cambio en todos los lugares que este aparezca. Solo alcanza con modificar el valor de la variable css. 
-Un ejemplo de como se utilizan, 
-Definición: 
-		 :root {
-			--main-color: black;
-		 }
+Las variables css pueden utilizarse cuando en sitios web complejos con una gran cantidad de cÃ³digo css es necesario repetir un valor debido a que el mismo se va a utilizar en diversas partes del documento. Esto es de gran utilidad, ya que en todos los casos en que se tenga que utilizar dicho valor, solo bastarÃ¡ con hacer referencia a la variable css declarada. Entonces, si el valor debiera ser modificado por alguna razon no es necesario realizar el cambio en todos los lugares que este aparezca. Solo alcanza con modificar el valor de la variable css. Un ejemplo de como se utilizan, DefiniciÃ³n:
 
-uso de la variable css: 
-		h1 {
-			background-color: var (--main-color);
- 		}
+    root { --main-color: black; }
 
-Las variables css son establecidas mediante la notación de propiedades personalizadas. Esto quiere decir que deben ser declaradas dentro de un selector para fjar su alcance. En el ejemplo anterior, se declaró dentro del selector :root, el cual tiene un alcance global para todo el documento css. 
-Las variables también respetan el concepto de cascada y heredan su valor de sus padres. 
+uso de la variable css:
 
+    h1 { background-color: var (--main-color); }
 
-Los problemas que puede traer la utilización de variables css son los siguientes: 
-- Debido a que son hereditarios los valores que puede tomar una variable en un determinado elemento, puede que se utilize el valor de una variable en un determinado selector, y este por no estar definido arriba en la jerarquía, de como resultado un valor inválido. Esto conllevaría a que la propiedad no se aplique como corresponde. 
-- Puede haber dificultades para intrerpretar el código css si se usan demasiadas variables css y sus nombres no son tann explicativos. 
-- Hay varios navegadores que aún no soportan variables css. Por lo tanto, las propiedades declaradas mediante variables css, no se reflejarán adecuadamente en estos navegadores.
-- En algunas ocasiones, puede que el uso de variables haga que el proceso de rederización de una página sea ejecutado más lentamente por el navegador. 
+Las variables css son establecidas mediante la notaciÃ³n de propiedades personalizadas. Esto quiere decir que deben ser declaradas dentro de un selector para fijar su alcance. En el ejemplo anterior, se declarÃ³ dentro del selector :root, el cual tiene un alcance global para todo el documento css. Las variables tambiÃ©n respetan el concepto de cascada y heredan su valor de sus padres.
 
+Los problemas que puede traer la utilizaciÃ³n de variables css son los siguientes:
 
-**10)** CSS Grid Layout ¿Qué es? Explicar las reglas que intervienen en el armado de una grilla. ¿Qué ventajas y desventajas tiene frente a otros Layouts?
+Debido a que son hereditarios los valores que puede tomar una variable en un determinado elemento, puede que se utilize el valor de una variable en un determinado selector, y este por no estar definido arriba en la jerarquÃ­a, de como resultado un valor invÃ¡lido. Esto conllevarÃ­a a que la propiedad no se aplique como corresponde.
+Puede haber dificultades para intrerpretar el cÃ³digo css si se usan demasiadas variables css y sus nombres no son tann explicativos.
+Hay varios navegadores que aÃºn no soportan variables css. Por lo tanto, las propiedades declaradas mediante variables css, no se reflejarÃ¡n adecuadamente en estos navegadores.
+En algunas ocasiones, puede que el uso de variables haga que el proceso de rederizaciÃ³n de una pÃ¡gina sea ejecutado mÃ¡s lentamente por el navegador.
 
+**10)** CSS Grid Layout Â¿QuÃ© es? Explicar las reglas que intervienen en el armado de una grilla. Â¿QuÃ© ventajas y desventajas tiene frente a otros Layouts?
 
-**11)** ¿Qué puntos en común y en que se diferencian las Material Design Guide lines de Google y las Human Interface Guidelines de Apple?
+**11)** Â¿QuÃ© puntos en comÃºn y en que se diferencian las Material Design Guide lines de Google y las Human Interface Guidelines de Apple?
