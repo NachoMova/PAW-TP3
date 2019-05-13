@@ -1,87 +1,157 @@
 @import url(reset.css);
 
-body{
-  background-color: #E6E6FF;
-  font-size: 1em;
-}
 
-#contenedor{
+
+html{
   width: 100%;
   height: 100%;
 }
 
-h1{
-  border: 2px solid black;
-  font-size: 2em;
-  font-weight: bold;
-  text-align: center; 
-  background-color: #B4FFE5;
-}
-
-/* Seccion principal que contiene el cuestionario*/
-.seccionCuestionario{
+body {
   display: grid;
-  grid-gap: 3%;
+  grid-template-rows: 12% 1fr;
+  width: 100%;
   height: 100%;
+}
+
+
+h1 {
+  font-family: "Bree Serif";
+  font-size: 10vh;
+  width:100%;
+  height: 100%;
+  text-align: center;
+  color:lime;
+  background-color: grey;
+}
+
+#cryptogram {
+  width: 100%;
+  height: 100%;
+  font-size: 1em;
+  /* background-image: url(../images/fondo1.jpg); */
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header-levels {
+  margin-bottom: 12px;
+  display: grid;
+  grid-template-columns: 33.33% 33.33% 33.33%;
+  grid-template-rows: 100%;
   width: 100%;
 }
 
-/* Articulo que contiene las preguntas con sus respuestas*/
-.articuloPregunta{
-  border-bottom: 1px solid black;
-  border-top: 1px solid black;
-  display: grid; 
-  padding: 1%;
+/* Buttons styles start */
+button.btn-face {
+    display: inline-block;
+    border: none;
+    padding: 1rem 1rem;
+    margin: 0;
+    text-decoration: none;
+    background-image: url(../images/face.png);
+    background-size: contain;
+    line-height: 1;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
 }
 
-/* texto de la pregunta*/
-.pregunta{
-  font-size: 1.2em;
+button.btn {
+    display: inline-block;
+    border: none;
+    padding: 1rem 2rem;
+    margin: 0;
+    text-decoration: none;
+    background: #0069ed;
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 1rem;
+    line-height: 1;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+button.btn:hover,
+button.btn:focus {
+    background: #0053ba;
+}
+
+button.btn:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
+
+button.btn:active {
+    transform: scale(0.99);
+}
+/* Button styles end */
+
+table {
+  border: 2px solid #000000;
+  background-color: #4A4A4A;
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+table td, table.darkTable th {
+  border: 1px solid #4A4A4A;
+  padding: 3px 2px;
+}
+table tbody td {
+  font-size: 13px;
+  color: #E6E6E6;
+}
+table tr:nth-child(even) {
+  background: #888888;
+}
+table thead {
+  background: #000000;
+  border-bottom: 3px solid #000000;
+}
+table thead th {
+  font-size: 15px;
   font-weight: bold;
+  color: #E6E6E6;
+  text-align: center;
+  border-left: 2px solid #4A4A4A;
+}
+table thead th:first-child {
+  border-left: none;
 }
 
-/* div que contiene las respuestas (checkboks) */
-.contenedorRespuestas{
-  margin: 1%; 
-}
-
-/* Resultado de la pregunta (puntos) */
-.resultadoPregunta{
-  font-style: italic;
-  margin: 1%;
-}
-
-/* Resultado total del cuestionario */
-.resultadoTotal{
-  border: 2px solid red;
-  font-size: 2em;
+table tfoot {
+  font-size: 12px;
   font-weight: bold;
-  margin: 1%;
-  padding: 0.5%;
+  color: #E6E6E6;
+  background: #000000;
+  background: -moz-linear-gradient(top, #404040 0%, #191919 66%, #000000 100%);
+  background: -webkit-linear-gradient(top, #404040 0%, #191919 66%, #000000 100%);
+  background: linear-gradient(to bottom, #404040 0%, #191919 66%, #000000 100%);
+  border-top: 1px solid #4A4A4A;
+}
+table tfoot td {
+  font-size: 12px;
 }
 
-/* div que contiene el tiempo transcurrido */
-.divTiempo{
-  text-align: right;
-  margin-right: 2%;
+.letter, .space {
+  float: left;
 }
 
-/* tiempo transcurrido (solo número) */
-.tiempo{
-  font-weight: bold;
-} 
-
-/* Botón para enviar cuestionario */
-.botonEnviar{
-  background-color: #FF6B52;
-  font-size: 1em;
-  font-weight: bold;
-  margin-bottom: 5%;
-  margin-left: 35%;
-  width: 30%;
+.space {
+  margin: 0 10px;
 }
 
-/* clase que permite resaltar opcion correcta*/
-.opcionCorrecta{
-  background-color: lime;
+label {
+  float: left;
+}
+
+input
+{
+    display:block;
 }
