@@ -58,7 +58,9 @@ Las variables css pueden utilizarse cuando en sitios web complejos con una gran 
 
 uso de la variable css:
 
-    h1 { background-color: var (--main-color); }
+    h1 { 
+    	background-color: var (--main-color); 
+    }
 
 Las variables css son establecidas mediante la notación de propiedades personalizadas. Esto quiere decir que deben ser declaradas dentro de un selector para fijar su alcance. En el ejemplo anterior, se declaró dentro del selector :root, el cual tiene un alcance global para todo el documento css. Las variables también respetan el concepto de cascada y heredan su valor de sus padres.
 
@@ -71,6 +73,16 @@ En algunas ocasiones, puede que el uso de variables haga que el proceso de reder
 
 **10)** CSS Grid Layout ¿Qué es? Explicar las reglas que intervienen en el armado de una grilla. ¿Qué ventajas y desventajas tiene frente a otros Layouts?
 
-asdasdasd
+Grid Layout es un sistema de diseño css de los más potentes. Permite realizar diseños bidimensionales en los cuales los elementos pueden posicionarse mediante el uso de filas y columnas. Además este Layout ofrece la posibilidad de dividir una página web en áreas o regiones principales y definir la relación de los elementos en base al tamaño y el posicionamiento. Para ello se deben aplicar reglas css a un elemento definido como prinicipal (contenedor) y a los elementos secundarios (items). 
+
+Las reglas que intervienen en el armado de una rejilla son las siguientes: 
+
+1) Definir el grid container: Para ello se debe seleccionar un elemento y definir su propiedad display en grid.
+
+	.grid-container {
+  	    display: grid;
+	}
+
+
 
 **11)** ¿Qué puntos en común y en que se diferencian las Material Design Guide lines de Google y las Human Interface Guidelines de Apple?
