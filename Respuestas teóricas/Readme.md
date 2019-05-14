@@ -152,6 +152,7 @@ La propiedad grid-area permite además nombrar a los elementos de la grilla, log
 	}
 	
 **11)** ¿Qué puntos en común y en que se diferencian las Material Design Guidelines de Google y las Human Interface Guidelines de Apple?
+
 Las Material Design Guidlines de Google y las Human Interface Guidlines de Apple comparten un objetivo en común, establecer reglas de diseño en las aplicaciones utilizadas en sus dispositivos con el fin de obtener una buena UX (User Experience).  Ambas buscan que sus aplicaciones sean fáciles de usar , que tengan una rápida interpretación y que el aprendizaje no sea una dificultad. Buscan que sus interfaces sean claras (texto leíble, uso de iconos representativos de su función, y no sobrecargar con demasiada decoración al usuario y hacer que este se pierda o se fatigue). Además, buscan que sus diseños permitan identificar rápidamente cuales son las partes funcionales de la aplicación, mediante el uso de colores que permitan resaltar estas secciones, e indicandole al usuario que puede interactuar con ellas. 
 A pesar de que ambas apuntan a lo mismo, tienen características que las diferencian: 
 
