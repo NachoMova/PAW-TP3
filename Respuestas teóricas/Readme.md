@@ -73,9 +73,97 @@ En algunas ocasiones, puede que el uso de variables haga que el proceso de reder
 
 **10)** CSS Grid Layout ¿Qué es? Explicar las reglas que intervienen en el armado de una grilla. ¿Qué ventajas y desventajas tiene frente a otros Layouts?
 
+Grid Layout es un sistema de diseño css de los más potentes. Permite realizar diseños bidimensionales en los cuales los elementos pueden posicionarse mediante el uso de filas y columnas. Además este Layout ofrece la posibilidad de dividir una página web en áreas o regiones principales y definir la relación de los elementos en base al tamaño y el posicionamiento. Para ello se deben aplicar reglas css a un elemento definido como prinicipal (contenedor) y a los elementos secundarios (items). 
 
+Las reglas que intervienen en el armado de una rejilla son las siguientes: 
 
+1- Definir el *grid container*: Para ello se debe seleccionar un elemento y definir su propiedad display en grid.
 
+    .grid-container {
+		display:grid;
+	} 
+Los hijos directos del elemento *grid container* se convierten automáticamente en *grid items*.
 
+2- Las líneas verticales de items se denominan *columns*.
+Para definir la cantidad de columns que tendrá el container  y su ancho, podemos usar la siguiente regla: 
 
-**11)** ¿Qué puntos en común y en que se diferencian las Material Design Guide lines de Google y las Human Interface Guidelines de Apple?
+    .grid-container {
+	    display:  grid;
+	    grid-template-columns: 80px 50px;
+	}
+Donde definimos que el container tendrá dos columns con la primera de un ancho de 80px y la segunda de 50px. 
+
+3- Las líneas horizontales de items se denominan *rows*, y lsu definición es similar a las columns: 
+
+    .grid-container {
+	    display: grid;
+	    grid-template-rows: 20px 50px 20px;
+	}
+En este caso hemos definido 3 rows, donde la primera tiene un alto de 20px, la segunda de 50px, y la tercera un alto de 20px. 
+
+4- El espacio entre rows o entre columns se denomina *grid gap*. Este puede ser definido específicamente para las columns o rows de la siguiente manera: 
+
+    grid-column-gap: 1px;
+    grid-row-gap: 2px;
+Sino puede definirse para ambos usando la siguiente regla: 
+
+    grid-gap: 1px;
+
+5- Las líneas entre columnas se denominan *column lines*, y estas son utilizadas para indicar cuantas columnas ocupará un item. Por ejemplo: 
+
+    .item1 {
+	    grid-column-start: 1;
+	    grid-column-end: 3;
+	}
+También de manera más elegante se puede definir de la siguiente manera: 
+
+    .item1 {
+	    grid-column: 1 / 5;
+	}
+Esto indica que el *item 1* comienza en la column line 1 y termina en la column line 5. 
+
+6- Las líneas entre rows se denominan *row lines*, y estas son utilizadas para delimitar cuantas filas ocupará un item. Por ejemplo: 
+
+    .item 1 {
+	    grid-row: 2 / 4; 
+	}
+Esto indica que el *item1* comienza en la row line 2 y termina en la row line 4. 
+
+7- También existe la propiedad *grid-area* que puede utilizarse para simplificar el uso de grid-column-start, grid-column-end, grid-row-start y grid-row-end. Ejemplo: 
+
+    .item 1 {
+	    grid-area: 1 / 2 / 5 / 6;
+	}
+Esto indica que el item 1 comienza en la row line 1 y en la column line 2; y termina en la row line 5 y en la column line 6. 
+
+La propiedad grid-area permite además nombrar a los elementos de la grilla, logrando resultados interesantes. Por ejemplo: 
+
+    .item1 { grid-area:  header; } 
+    .item2 { grid-area:  menu; }
+    .item3 { grid-area:  main; }
+    .item4 { grid-area:  right; }
+    .item5 { grid-area:  footer; }
+
+    .grid-container {  
+	    grid-template-areas: 
+		    'header header header header header header'  
+		    'menu main main main right right'   
+		    'menu footer footer footer footer footer';
+	}
+	
+**11)** ¿Qué puntos en común y en que se diferencian las Material Design Guidelines de Google y las Human Interface Guidelines de Apple?
+Las Material Design Guidlines de Google y las Human Interface Guidlines de Apple comparten un objetivo en común, establecer reglas de diseño en las aplicaciones utilizadas en sus dispositivos con el fin de obtener una buena UX (User Experience).  Ambas buscan que sus aplicaciones sean fáciles de usar , que tengan una rápida interpretación y que el aprendizaje no sea una dificultad. Buscan que sus interfaces sean claras (texto leíble, uso de iconos representativos de su función, y no sobrecargar con demasiada decoración al usuario y hacer que este se pierda o se fatigue). Además, buscan que sus diseños permitan identificar rápidamente cuales son las partes funcionales de la aplicación, mediante el uso de colores que permitan resaltar estas secciones, e indicandole al usuario que puede interactuar con ellas. 
+A pesar de que ambas apuntan a lo mismo, tienen características que las diferencian: 
+
+En cuanto a la profundidad de los elementos, Google se ha inspirado en el movimiento de diseño plano y cree que los humanos deberían interactuar con sus componentes como si fueran hojas de papel apiladas una encima de la otra. La profundidad es táctil y hace que el usuario sienta que sostiene cada pantalla en la palma de su mano. 
+Por su lado, Apple abarca una profundidad infinita en sus aplicaciones y utilizan componentes como sus botones de alerta y mensajes de texto con fondo borroso para crear la sensación de que los elementos están flotando y existen en su propio espacio. 
+
+Si nos centramos en la animación, Google lo ve como una forma de mejorar la experiencia del usuario y dar vida a sus componentes. Esta es, con mucho, una postura mucho más humanista que la que tiene Apple sobre la animación. Google utiliza una animación única para expresar el tipo de "material" con el que estás interactuando. 
+Por su parte, Apple tiene un enfoque sin sentido para la animación. Creen que la animación solo debería llevarte de A a B sin distraer al usuario del contenido real. Donde Google tiende a apoyarse en el lado humanista, Apple tiende a apoyarse en el lado inorgánico. 
+
+Observando la navegación, Google  brinda a los diseñadores más flexibilidad para la personalización. Sin embargo, esto hace que sea un poco más exigente para los usuarios comprender los patrones de navegación de una aplicación. Google cree que la navegación debería ser obvia y que puede ser en muchos lugares diferentes. Puede usar una variedad de componentes, tales como: botones de acción que revelan opciones, tarjetas que conducen a páginas similares al concepto de un tablero de instrumentos, usando pestañas, e incluso resaltando secciones utilizando códigos de color con iconos en una vista de lista.
+Por lo contrario,  Apple utiliza un sistema de navegación muy simple que es fácil de entender para todos los usuarios. Usan una "barra de pestañas" que se adjunta a la parte inferior de la pantalla con las funciones principales de una aplicación. Por lo general, no contiene más de 5 funciones principales, un icono de hamburguesa a veces aparece en la barra de pestañas para elementos de navegación menos importantes, como es el caso de la aplicación de música de Apple. La idea de que una aplicación no debe tener más de 5 funciones principales obliga a los diseñadores a pensar detenidamente sobre las características de su aplicación (es decir, ¡solo obtienes 5!). Apple también usa "pestañas" como la especificación de diseño de material de Google, pero en su lugar utiliza un componente llamado "control segmentado". Permitiendo solo hasta 3 controles segmentados como máximo, restringiendo las opciones del usuario y los diseñadores.
+
+Además, la visión de Google y Apple difiere mucho en cuanto al uso del icono de la hamburguesa. Google a menudo utiliza el menú de hamburguesas para su navegación principal. Una vez que haces clic en la hamburguesa, se abre un "cajón" como lo llaman o, a la inversa, un "navegador lateral" para Apple. Este cajón a menudo contiene una imagen de perfil del usuario, opciones de inicio de sesión, nombre de perfil y una lista basada en iconos de la navegación principal. Sin embargo, Apple no está de acuerdo con este sentimiento, ya que considera que los elementos de navegación principales deben estar presentes en el primer plano y que la hamburguesa debe usarse solo como un lugar para almacenar funciones que no son tareas diarias realizadas por el usuario. Apple utiliza su función de navegación lateral para almacenar los artículos que el usuario desee fuera del sitio. (ej: la hamburguesa de iOS facebook abre un navegador lateral que contiene preferencias y detalles de chat) Lo hacen para que los usuarios no se distraigan con las opciones y tengan una ruta enfocada (a través de la barra de pestañas inferior) a seguir para que los usuarios completen las funciones principales.
+
+Con respecto a la tipografia. Cada uno tiene sus propias fuentes predeterminadas que se recomiendan para los diseñadores, la cual ayuda a crear una sensación de coherencia y apariencia nativa en toda la plataforma. Google sugiere Roboto como su fuente de sistema por defecto. Mientras que Apple prefiere la fuente San Francisco.
