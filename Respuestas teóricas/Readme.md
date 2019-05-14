@@ -73,15 +73,8 @@ En algunas ocasiones, puede que el uso de variables haga que el proceso de reder
 
 **10)** CSS Grid Layout ¿Qué es? Explicar las reglas que intervienen en el armado de una grilla. ¿Qué ventajas y desventajas tiene frente a otros Layouts?
 
-Grid Layout es un sistema de diseño css de los más potentes. Permite realizar diseños bidimensionales en los cuales los elementos pueden posicionarse mediante el uso de filas y columnas. Además este Layout ofrece la posibilidad de dividir una página web en áreas o regiones principales y definir la relación de los elementos en base al tamaño y el posicionamiento. Para ello se deben aplicar reglas css a un elemento definido como prinicipal (contenedor) y a los elementos secundarios (items). 
 
-Las reglas que intervienen en el armado de una rejilla son las siguientes: 
 
-1) Definir el grid container: Para ello se debe seleccionar un elemento y definir su propiedad display en grid.
-
-	.grid-container {
-  	    display: grid;
-	}
 
 
 
